@@ -1,0 +1,179 @@
+/* 1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS */
+
+/* Estilos personalizados */
+:root {
+    --primary-color: #2756a3;
+    --secondary-color: #f8a54a;
+    --danger-color: #e74c3c;
+    --success-color: #27ae60;
+    --text-color: #333;
+    --light-bg: #f5f8fa;
+}
+
+
+/* 2. ESTILOS BASE */
+
+/* Estilos base do documento para tipografia e layout estrutural*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. LAYOUT PRINCIPAL */
+
+/* Elemento principal e rodapé*/
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+/* 4. NAVEGAÇÃO E SISTEMA DAS PÁGINAS */
+
+/* Barra de navegação, sistema de navegação SPA*/
+
+.navbar {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* 5. REUTILIZÁVEIS */
+
+/* Cards*/
+
+.card {
+    height: 100%; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    border-radius: 8px; 
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.card-title {
+    color: var(--primary-color); 
+    font-weight: 600; 
+}
+
+/* Botões*/
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #1a4070; /* Versão mais escura do primário para feedback visual */
+    border-color: #1a4070;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+/* Formulário*/
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(39, 86, 163, 0.25); /* Sutil glow na cor principal */
+}
+
+/* Tipografia */
+
+.lead a {
+    color: var(--primary-color); /* Usa a cor primária do seu tema */
+    transition: color 0.2s, opacity 0.2s; /* Adiciona transição suave */
+}
+
+.lead a:hover {
+    opacity: 0.8; /* Suaviza levemente no hover */
+    text-decoration: underline; /* Reforça que é um link no hover */
+}
+
+/* Citações */
+.citation {
+    white-space: nowrap;        /* Mantém o texto em uma única linha */
+    overflow-x: auto;           /* Adiciona rolagem horizontal se necessário */
+    margin-top: -0.5rem;        /* Aproxima a citação do parágrafo anterior */
+    font-size: 0.8rem;          /* Tamanho de fonte menor */
+    line-height: 1.2;           /* Altura da linha reduzida */
+}
+
+/* 6. COMPONENTES ESPECÍFICOS */
+
+/* Wizard - Questionário*/
+
+.wizard-container {
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.range-container {
+    position: relative; 
+    padding-bottom: 30px; 
+}
+
+.range-labels {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 5px;
+    font-size: 0.8rem; 
+    color: #666; 
+    position: absolute; 
+    width: 100%;
+    bottom: 0;
+}
+
+/* Visualização de Dados */
+
+/* a. Sistema de cores */
+.nivel-1 { background-color: #e6f7ff; } /* Azul claro - risco muito baixo */
+.nivel-2 { background-color: #d1f7c4; } /* Verde claro - risco baixo */
+.nivel-3 { background-color: #fff8e1; } /* Amarelo claro - risco médio */
+.nivel-4 { background-color: #ffecb3; } /* Laranja claro - risco alto */
+.nivel-5 { background-color: #ffcdd2; } /* Vermelho claro - risco crítico */
+
+/* b. Visualização detalhada de respostas */
+.subtema-card {
+    margin-bottom: 2rem; /* Espaçamento entre cards de respostas */
+}
+
+.subtema-card .table td {
+    vertical-align: middle; /* Alinha conteúdo verticalmente nas células */
+}
+/* Gráficos */
+
+/** Correção Dimensionamento */
+canvas#grafico-riscos {
+    height: 400px !important; 
+    width: 100% !important; 
+    transition: none !important; 
+    transform: none !important; 
+    display: block; 
+}
+/* Dimensionamento Estável */
+.chart-container {
+    position: relative; 
+    height: 400px; 
+    width: 100%; 
+    transition: none !important; 
+}
+
